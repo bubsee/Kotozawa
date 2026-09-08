@@ -1,7 +1,8 @@
 import pygame
 import objects
 import map
-showing = False
+import NPCs_hitboxes
+showing = True
 
 #fucntion to add in details hitboxes
 def add(x, y, object):
@@ -41,6 +42,8 @@ add(174,200,objects.right_flag) #right flag
 def draw(screen):
     for wall in walls:
         pygame.draw.rect(screen, (255, 0, 0), wall, 2)
+
+    #NPCs_hitboxes.show_NPC_hitboxes()
 
 def movement_allowed(hitbox, new_x, new_y):
     future_hitbox = pygame.Rect(new_x-1, new_y+34, hitbox.width, hitbox.height)

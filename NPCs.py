@@ -69,6 +69,7 @@ class Villager:
         self.start_building = start_building
         self.x, self.y = entries.building_entries[start_building]     #fetch the coordinates of the start buiding's door
         self.end_point = random.choice(stop_spots)    #choose random stop spot
+        self.hitbox = pygame.Rect(self.x, self.y, 20, 20)
 
 
         #print(map.grid[self.y // 25][self.x // 25])  #debugging start position
@@ -172,8 +173,6 @@ class Villager:
             elif self.direction == 'right':
                 self.current_image = self.right_run[self.frame]
 
-
-
     def make_sheets(self):
         self.down_run = sprites.take_row(0, 'walking', (311, 601))
         self.up_run = sprites.take_row(1, 'walking', (311, 601))
@@ -227,5 +226,27 @@ James = Villager('tall palace', 'sprite_idle_sheet','sprite_walking_sheet', (27,
 Rowan = Villager('tall house', 'sprite_idle_sheet','sprite_walking_sheet', (27,48))
 #Villagerno5 = Villager('food shop', 'sprite_idle_sheet','sprite_walking_sheet', (27,48))
 #Villagerno6 = Villager('shop', 'sprite_idle_sheet','sprite_walking_sheet', (27,48))
-Villagerno7 = Villager('big house', 'sprite_idle_sheet','sprite_walking_sheet', (27,48))
-Villagerno8 = Villager('square house', 'sprite_idle_sheet','sprite_walking_sheet', (27,48))
+Lemonie = Villager('big house', 'sprite_idle_sheet','sprite_walking_sheet', (27,48))
+Olex = Villager('square house', 'sprite_idle_sheet','sprite_walking_sheet', (27,48))
+
+
+
+
+
+#NPCs = ['Arthur','Dean','James','Rowan','Lemonie','Olex']
+def show_villager_hitboxes(screen):
+    #for NPC in NPCs:
+    screen.blit(NPC.hitbox)
+
+
+
+
+
+
+
+
+
+
+
+
+
